@@ -1,43 +1,45 @@
-<h1 align="center">
- <a href="http://thor.angel-lm.com">
-    <picture>
-      <source height="80" media="(prefers-color-scheme: dark)" srcset="doc/logo_dark.svg">
-      <img height="80" alt="Fiber" src="doc/logo_light.svg">
-    </picture>
-  </a>
+<h1 align="center">ThorRR</h1>
 
- <br>
-
- <a href="http://thor.angel-lm.com/">
-     <img src="https://img.shields.io/badge/website-thor.angel--lm.com-red?logo=htmx">
- </a>
- <a href="http://thor.angel-lm.com/worldwide/">
-     <img src="https://img.shields.io/endpoint?url=https://angel-lm.com/thor/thor-counter.php">
- </a>
- <a href="http://thor.angel-lm.com/forums/">
-     <img src="https://img.shields.io/endpoint?url=https://angel-lm.com/thor/forum-counter.php&color=orange">
+<p align="center">
+ <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">
+     <img src="https://img.shields.io/github/license/angellm/Thor">
  </a>
  <a href="https://discord.com/invite/a5dSVqSUK5">
      <img src="https://img.shields.io/discord/1189278202514907166?label=discord&logo=discord">
  </a>
- <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">
-     <img src="https://img.shields.io/github/license/angellm/Thor">
- </a>
-</h1>
+</p>
+
 <p align="center">
- <em><b>Thor</b> is an open source, 3D printed, 6 degrees of freedom robotic arm. Designed to be affordable and accessible, Thor is ideal for educational settings, makers, and robotics enthusiasts. With a height of 625mm it has the capacity to lift up to 750g. Its yaw-roll-roll-yaw-roll-yaw configuration is common in industrial manipulators.</em>
+ <em><b>ThorRR</b> is a fork of the open-source <a href="https://github.com/AngelLM/Thor">Thor</a> robotic arm with a fully working <b>RepRapFirmware (RRF)</b> setup, modified parts, and optical endstops. The original Thor listed RRF as supported but the implementation was incomplete and undocumented. ThorRR picks up where that left off with a tested configuration, redesigned parts, and an updated BOM.</em>
 </p>
 <p align="center">
  <img src="doc/banner.png" width="800">
 </p>
 
+## What's Different from Thor?
+
+The original Thor mentioned RepRapFirmware support, but in practice the RRF configuration was incomplete, undocumented, and not usable out of the box. ThorRR fixes that and makes several other changes:
+
+**Firmware & Electronics**
+- Fully working, tested RepRapFirmware configuration
+- Replaces the Arduino Mega + GRBL setup with a single RRF-compatible board
+- Web interface (Duet Web Control) for jogging, configuration, and macros
+
+**Modified Parts**
+- Optical endstops instead of mechanical switches
+- Redesigned base
+- Several parts resized for better fit and printability
+
+**Updated BOM**
+- Some components differ from the original Thor bill of materials to accommodate the above changes
+
 ## ✨ Key Features
 
-- 🧩 **Born Open Source**: Designed using open source software such as FreeCAD, KiCAD, GRBL, RRF and ROS.
-- 🕊️ **Released Open Source**: All source files published under CC-BY-SA-4.0 license.
+- 🧩 **Open Source**: Built on open source software — FreeCAD, KiCAD, RepRapFirmware, and ROS.
+- 🕊️ **CC-BY-SA-4.0 Licensed**: All source files published under the same license as the original Thor.
 - 💰 **Low Cost**: Hardware cost below 350€.
-- 📚  **Suitable for education**: Perfect for robotics courses in schools and universities, there are already success cases!
-- 🧰 **G-code Controlled**: Uses the same language as 3d printers and CNCs to move.
+- 📚 **Suitable for Education**: Perfect for robotics courses in schools and universities.
+- 🧰 **Actually Working RRF Support**: A tested RepRapFirmware configuration — not just listed as supported.
 - 🐳 **ROS2 Integration**: Available implementation using Docker for flexibility.
 
 
@@ -49,9 +51,10 @@
 
 
 ## 🔗 Related Repositories
+- [**Thor (original)**](https://github.com/AngelLM/Thor): The original Thor project by AngelLM that this fork is based on.
 - [**Thor-ROS**](https://github.com/AngelLM/Thor-ROS): ROS2 & Moveit2 configuration files and packages to work with Thor.
-- [**ThorControlPCB**](https://github.com/AngelLM/ThorControlPCB): Source & manufacture files of Arduino Mega shield designed to control Thor.
-- [**Asgard**](https://github.com/AngelLM/Asgard): Control software for thor motors with a simple interface.
+- [**ThorControlPCB**](https://github.com/AngelLM/ThorControlPCB): Source & manufacture files of Arduino Mega shield designed for the original Thor.
+- [**Asgard**](https://github.com/AngelLM/Asgard): Control software for Thor motors with a simple interface (original Thor).
 
 
 
@@ -73,9 +76,9 @@
 - **Height Stretched**: 625mm (without end effector).
 - **Payload Capacity**: 750g max (including end effector weight).
 - **Motors**: Stepper motors.
-- **Electronics**: DIY PCB or commercial boards.
+- **Electronics**: RepRapFirmware-compatible board.
 - **Transmission**: 3D printed gears, GT2 pulleys and belts.
-- **Software**: FreeCAD, KiCAD, GRBL, RRF, ROS2.
+- **Software**: FreeCAD, KiCAD, RepRapFirmware, ROS2.
 
 
 
@@ -90,13 +93,13 @@
 
 ## 🤝 Contributing
 
-Contributions are welcome! If you'd like to improve Thor — whether it's design, documentation, or code — feel free to open an [Issue](https://github.com/AngelLM/Thor/issues) or submit a Pull Request.
+Contributions are welcome! If you'd like to improve ThorRR — whether it's design, documentation, or code — feel free to open an Issue or submit a Pull Request.
 
 
 
 ## 📜 License
 
-Thor is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode). You’re free to use, modify, and distribute this project under its terms.
+ThorRR is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode), the same license as the original Thor project. You’re free to use, modify, and distribute this project under its terms.
 
 
 
